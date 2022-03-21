@@ -1,0 +1,33 @@
+[package]
+name = "lsp-blog"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = { version = "0.5.0-rc.1" , features = ["json"] }
+
+# 日期时间库
+chrono = "0.4"
+
+# 加密库
+rust-crypto = "^0.2"
+
+# jwt
+jwt-simple = "0.10"
+
+# serde
+serde = "1.0.136"
+
+# rbson
+rbson = "2.0.3"
+
+# logging lib
+log = "0.4"
+fast_log = { version = "1.4" }
+
+# lazy_static
+lazy_static = "1.4.0"
+
+rbatis =  { version = "3.0", default-features = false, features = ["mysql","runtime-async-std-rustls"] }

@@ -1,0 +1,31 @@
+[default]
+address = "127.0.0.1"
+port = 8000
+workers = 8
+keep_alive = 5
+ident = "Rocket"
+log_level = "normal"
+cli_colors = true
+# secret_key = "hPRYyVRiMyxpw5stt1XeCMN1kFsDCqKvBi2QJxBVHQk="
+temp_dir = "/tmp"
+
+[debug]
+address = "127.0.0.1"
+port = 8000
+workers = 8
+keep_alive = 5
+ident = "Rocket"
+log_level = "normal"
+# secret_key = ""
+limits = { forms = "5 MiB", json = "5 MiB", "file/jpg" = "5 MiB", "file/png" = "5 MiB" }
+temp_dir = "/tmp"
+
+[release]
+address = "0.0.0.0"
+port = 8000
+workers = 8
+keep_alive = 5
+log_level = "normal"
+# secret_key = ""
+limits = { forms = "5 MiB", json = "5 MiB", "file/jpg" = "5 MiB", "file/png" = "5 MiB" }
+temp_dir = "/tmp"
