@@ -19,10 +19,10 @@ use jwt_simple::prelude::HS256Key;
 
 use response::resp_obj::RespData;
 
-use crate::controller::user_controller;
-use crate::controller::category_controller;
 use crate::controller::article_controller;
-
+use crate::controller::category_controller;
+use crate::controller::tag_controller;
+use crate::controller::user_controller;
 
 // 定义全局变量
 lazy_static! {
@@ -76,7 +76,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 article_controller::update,                 // 更新文章
                 article_controller::admin_search,           // 搜索文章（后台）
                 article_controller::search,                 // 搜索文章（前台）
-
+                tag_controller::list,                       // 标签列表
+                tag_controller::tag_articles,               // 标签下的文章列表
+                tag_controller::create,                     // 新增标签
+                tag_controller::update,                     // 更新标签
+                tag_controller::remove,                     // 删除标签
             ],
         )
         .attach(AdHoc::on_ignite("Rbatis Database", |rocket| async move {
